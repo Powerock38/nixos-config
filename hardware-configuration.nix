@@ -18,19 +18,10 @@
       options = [ "defaults" "size=25%" "mode=755" ];
     };
 
-  fileSystems."/persistent" =
-    {
-      device = "/dev/disk/by-uuid/08af3b24-2d6b-413e-bffd-19d91a305f02";
-      neededForBoot = true;
-      fsType = "ext4";
-      options = [ "subvol=persistent" ];
-    };
-
   fileSystems."/nix" =
     {
       device = "/dev/disk/by-uuid/08af3b24-2d6b-413e-bffd-19d91a305f02";
       fsType = "ext4";
-      options = [ "subvol=nix" ];
     };
 
   fileSystems."/boot" =

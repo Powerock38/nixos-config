@@ -19,7 +19,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # IMPERMANENCE
-  environment.persistence."/persistent" = {
+  environment.persistence."/nix/persist/system" = {
     hideMounts = true;
     directories = [
       "/var/log"

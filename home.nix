@@ -7,7 +7,7 @@
   xsession.numlock.enable = true;
 
   # IMPERMANENCE
-  home.persistence."/persistent/home/powerock" = {
+  home.persistence."/nix/persist/home/powerock" = {
     directories = [
       "CONFIGURATION"
       "Documents"
