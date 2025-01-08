@@ -6,6 +6,37 @@
 
   xsession.numlock.enable = true;
 
+  # IMPERMANENCE
+  home.persistence."/persistent/home/powerock" = {
+    directories = [
+      "CONFIGURATION"
+      "Documents"
+      "Downloads"
+      "Pictures"
+      "Music"
+      "Videos"
+
+      # important stuff
+      { directory = ".gnupg"; mode = "0700"; }
+      { directory = ".ssh"; mode = "0700"; }
+      { directory = ".nixops"; mode = "0700"; }
+      { directory = ".local/share/keyrings"; mode = "0700"; }
+      ".local/share/direnv"
+
+      # apps
+      # ".local/share/fish"
+      ".mozilla/firefox"
+      ".cache/mozilla/firefox"
+      ".vscode"
+      ".config/Code"
+      ".config/discord"
+      { directory = ".local/share/Steam"; method = "symlink"; }
+    ];
+    files = [
+    ];
+    allowOther = true;
+  };
+
   ############
   # PACKAGES #
   ############
