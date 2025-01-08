@@ -131,15 +131,13 @@
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     backupFileExtension = "backupHomeManager";
-    users = {
-      "powerock" = { ... }:
-        {
-          imports = [
-            inputs.impermanence.homeManagerModules.impermanence
-            ./home.nix
-          ];
-        };
-    };
+    users.powerock = { ... }:
+      {
+        imports = [
+          inputs.impermanence.homeManagerModules.impermanence
+          ./home.nix
+        ];
+      };
   };
 
   # fish shell
