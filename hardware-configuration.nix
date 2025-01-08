@@ -18,10 +18,19 @@
       options = [ "defaults" "size=25%" "mode=755" ];
     };
 
+  fileSystems."/persistent" =
+    {
+      device = "/dev/disk/by-uuid/afdbc60f-8071-4a0d-a81a-148b709a64d7";
+      neededForBoot = true;
+      fsType = "btrfs";
+      options = [ "subvol=persistent" ];
+    };
+
   fileSystems."/nix" =
     {
-      device = "/dev/disk/by-uuid/08af3b24-2d6b-413e-bffd-19d91a305f02";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/afdbc60f-8071-4a0d-a81a-148b709a64d7";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
     };
 
   fileSystems."/boot" =
