@@ -7,7 +7,7 @@
 
     autoEnable = true; # Auto style most apps
 
-    # base16Scheme = ./palette.json;
+    # base16Scheme = ./palette.yml;
 
     image = ./monet.jpeg;
     imageScalingMode = "center";

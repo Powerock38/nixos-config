@@ -16,6 +16,7 @@
       sudo nixos-rebuild switch --flake ~/CONFIGURATION#default
     '')
     nixpkgs-fmt
+    gnomeExtensions.dash-to-panel
     vscode.fhs
     discord
     vlc
@@ -29,6 +30,35 @@
     userEmail = "mat.papp@free.fr";
   };
   programs.fish.enable = true;
+
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          pkgs.gnomeExtensions.system-monitor.extensionUuid
+          pkgs.gnomeExtensions.dash-to-panel.extensionUuid
+        ];
+        favorite-apps = [
+          "org.gnome.Nautilus.desktop"
+          "org.gnome.Console.desktop"
+          "firefox.desktop"
+        ];
+        last-selected-power-profile = "performance";
+      };
+
+      "org/gnome/desktop/wm/preferences" = {
+        num-workspaces = "1";
+      };
+
+      "org/gnome/mutter" = {
+        edge-tiling = true;
+      };
+    };
+  };
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
