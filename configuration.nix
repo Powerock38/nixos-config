@@ -132,7 +132,13 @@
     useGlobalPkgs = true;
     backupFileExtension = "backupHomeManager";
     users = {
-      "powerock" = import ./home.nix;
+      "powerock" = { ... }:
+        {
+          imports = [
+            inputs.impermanence.homeManagerModules.impermanence
+            ./home.nix
+          ];
+        };
     };
   };
 

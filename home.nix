@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    inputs.impermanence.nixosModules.home-manager.impermanence
-  ];
-
   home.username = "powerock";
   home.homeDirectory = "/home/powerock";
 
