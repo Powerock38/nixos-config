@@ -20,7 +20,7 @@
 
   fileSystems."/persistent" =
     {
-      device = "/dev/disk/by-uuid/afdbc60f-8071-4a0d-a81a-148b709a64d7";
+      device = "/dev/disk/by-uuid/9e2cfb19-8433-456c-8169-f33cd829f2f7";
       neededForBoot = true;
       fsType = "btrfs";
       options = [ "subvol=persistent" ];
@@ -28,7 +28,7 @@
 
   fileSystems."/nix" =
     {
-      device = "/dev/disk/by-uuid/afdbc60f-8071-4a0d-a81a-148b709a64d7";
+      device = "/dev/disk/by-uuid/9e2cfb19-8433-456c-8169-f33cd829f2f7";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
